@@ -1,0 +1,82 @@
+body {
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alignement en haut pour éviter que le contenu ne soit centré verticalement */
+    min-height: 100vh;
+}
+
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px; /* Ajustez si nécessaire */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column; /* Afficher les groupes de contrôle en colonne */
+    gap: 20px; /* Espacement entre les groupes de contrôle */
+}
+
+.control-group {
+    display: flex;
+    align-items: center; /* Aligner verticalement les labels et les boutons */
+    justify-content: space-between; /* Espacement entre le label et les boutons */
+    margin-bottom: 10px; /* Espacement entre les lignes de contrôle */
+}
+
+.control-group label {
+    margin-right: 15px;
+    font-weight: bold;
+    color: #555;
+    flex-basis: 200px; /* Largeur fixe pour les labels, ajustez selon le texte le plus long */
+    text-align: right; /* Aligner le texte des labels à droite */
+}
+
+
+.control-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    color: white;
+    background-color: #5cb85c; /* Vert par défaut (ON) */
+    margin-right: 5px; /* Espacement entre les boutons ON/OFF */
+}
+
+.control-button:last-child {
+    margin-right: 0; /* Supprimer la marge à droite du dernier bouton (OFF) */
+}
+
+
+.control-button[data-state="false"] {
+    background-color: #d9534f; /* Rouge pour OFF */
+}
+
+.control-button:hover {
+    opacity: 0.9;
+}
+
+.message-area {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-style: italic;
+    color: #777;
+}

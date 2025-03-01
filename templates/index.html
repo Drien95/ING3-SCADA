@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contrôle Sorting Station</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Contrôle du Sorting Station</h1>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="entry_conveyor">Convoyeur d'entrée:</label>
+                <button class="control-button" data-control="entry_conveyor" data-state="true">ON</button>
+                <button class="control-button" data-control="entry_conveyor" data-state="false">OFF</button>
+            </div>
+
+            <div class="control-group">
+                <label for="stop_blade">Stop Blade:</label>
+                <button class="control-button" data-control="stop_blade" data-state="true">ON</button>
+                <button class="control-button" data-control="stop_blade" data-state="false">OFF</button>
+            </div>
+
+            <div class="control-group">
+                <label for="exit_conveyor">Convoyeur de sortie:</label>
+                <button class="control-button" data-control="exit_conveyor" data-state="true">ON</button>
+                <button class="control-button" data-control="exit_conveyor" data-state="false">OFF</button>
+            </div>
+
+            <div class="control-group">
+                <label for="blue_sorter">Trieur Bleu (Belt + Turn):</label>
+                <button class="control-button" data-control="blue_sorter" data-state="true">ON</button>
+                <button class="control-button" data-control="blue_sorter" data-state="false">OFF</button>
+            </div>
+
+            <div class="control-group">
+                <label for="green_sorter">Trieur Vert (Belt + Turn):</label>
+                <button class="control-button" data-control="green_sorter" data-state="true">ON</button>
+                <button class="control-button" data-control="green_sorter" data-state="false">OFF</button>
+            </div>
+
+            <div class="control-group">
+                <label for="metal_sorter">Trieur Métal (Belt + Turn):</label>
+                <button class="control-button" data-control="metal_sorter" data-state="true">ON</button>
+                <button class="control-button" data-control="metal_sorter" data-state="false">OFF</button>
+            </div>
+
+            </div>
+
+        <div id="message" class="message-area"></div>
+    </div>
+
+    <script src="../static/script.js"></script>
+</body>
+</html>

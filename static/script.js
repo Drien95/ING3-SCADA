@@ -4,33 +4,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
     controlButtons.forEach(button => {
         button.addEventListener('click', function(event) {
-            event.preventDefault(); // Empêcher la soumission de formulaire (si utilisé dans un formulaire)
+            event.preventDefault(); 
 
-            const controlName = this.dataset.control; // Récupérer le nom du contrôle depuis l'attribut data-control
-            const state = this.dataset.state;     // Récupérer l'état (true/false) depuis l'attribut data-state
+            const controlName = this.dataset.control; 
+            const state = this.dataset.state;     
 
-            // Envoi de la requête POST au backend Flask
+
             fetch('/control', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded', // Type de contenu pour les données de formulaire
+                    'Content-Type': 'application/x-www-form-urlencoded', 
                 },
-                body: `control=${encodeURIComponent(controlName)}&state=${encodeURIComponent(state)}` // Envoi des données au format formulaire
+                body: `control=${encodeURIComponent(controlName)}&state=${encodeURIComponent(state)}` 
             })
-            .then(response => response.json()) // Parse la réponse JSON
+            .then(response => response.json()) 
             .then(data => {
                 if (data.status === 'success') {
                     messageArea.textContent = `Commande "${data.control}" mise à "${data.state.toUpperCase()}" avec succès.`;
-                    messageArea.className = 'message-area success-message'; // Ajouter une classe pour le style de succès
+                    messageArea.className = 'message-area success-message'; 
                 } else {
                     messageArea.textContent = `Erreur: ${data.message}`;
-                    messageArea.className = 'message-area error-message'; // Ajouter une classe pour le style d'erreur
+                    messageArea.className = 'message-area error-message'; 
                 }
-                 // Réinitialiser les classes de message après un délai (pour un affichage temporaire)
+
                 setTimeout(() => {
-                    messageArea.className = 'message-area'; // Réinitialiser à la classe de base
-                    messageArea.textContent = ''; // Effacer le texte
-                }, 3000); // Effacer après 3 secondes (3000 ms)
+                    messageArea.className = 'message-area'; 
+                    messageArea.textContent = ''; 
+                }, 3000); 
             })
             .catch(error => {
                 console.error('Erreur fetch:', error);
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 setTimeout(() => {
                     messageArea.className = 'message-area';
                     messageArea.textContent = '';
-                }, 5000); // Effacer après 5 secondes en cas d'erreur de fetch
+                }, 5000); 
             });
         });
     });
